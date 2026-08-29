@@ -56,4 +56,6 @@ app.delete("/student/:id", require("./middleware/verifyToken"), require("./middl
 app.use(errorHandler);
 
 const PORT = env.port;
-app.listen(PORT, () => console.log(`Server started on port ${PORT} 🚀`));
+app.listen(PORT, "0.0.0.0", () =>
+  console.log(`Server started on port ${PORT}`)
+);
