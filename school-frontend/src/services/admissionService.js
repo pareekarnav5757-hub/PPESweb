@@ -3,7 +3,7 @@ import { request } from "./api";
 // Public submission (no auth token needed — but our request helper attaches it if present, which is fine)
 const submitPublicAdmission = async (data) => {
   // Use raw fetch to avoid needing a token for public submission
-  const response = await fetch("http://localhost:5000/api/admissions", {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admissions`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
